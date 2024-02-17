@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Перевірка віку</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+    function checkAge() {
+            var age = document.getElementById("age").value;
+            var result;
+
+            if (age < 0) {
+                result = "Невірний вік";
+            } else if (age <= 18) {
+                result = "Ви ще не повнолітній";
+            } else {
+                result = "Ви стали дорослим";
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <h2>Перевірка віку</h2>
+    <label for="age">Введіть ваш вік: </label>
+    <input type="number" id="age">
+    <button onclick="checkAge()">Перевірити</button>
+    <p id="result"></p>
+
+
+</body>
+</html>

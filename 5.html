@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Розрахунок зарплати</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+function calculateSalary() {
+            var experience = parseInt(document.getElementById("experience").value);
+            var baseSalary = parseInt(document.getElementById("baseSalary").value);
+            var bonus = 0;
+
+            if (experience <= 3) {
+                baseSalary *= 1.1;
+            } else {
+                baseSalary *= 1.2;
+            }
+
+            if (baseSalary < 4000) {
+                bonus = 1000;
+            } else {
+                bonus = 500;
+            }
+            var totalSalary = baseSalary + bonus;
+
+            document.getElementById("output").innerHTML = "Загальна зарплата: " + totalSalary.toFixed(2);
+        }
+ </script>
+</body>
+<body>
+	<h2>Розрахунок зарплати</h2>
+    <label for="experience">Стаж роботи (роки): </label>
+    <input type="number" id="experience"><br><br>
+    <label for="baseSalary">Базова зарплата: </label>
+    <input type="number" id="baseSalary"><br><br>
+    <button onclick="calculateSalary()">Розрахувати</button><br><br>
+    <p id="output"></p>
+</body>
+</html>
